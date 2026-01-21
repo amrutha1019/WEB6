@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+</head>
+<body>
+
+<h3>Multiplication Table</h3>
+
+<input type="number" id="numberForTable" placeholder="Enter a number">
+<button onclick="generateMultiplicationTable()">Generate Table</button>
+
+<pre id="tableResult"></pre>
+
+<script>
+function generateMultiplicationTable() {
+    const n = parseInt(document.getElementById("numberForTable").value);
+
+    if (isNaN(n)) {
+        alert("Please enter a valid number");
+        return;
+    }
+
+    let table = "Multiplication Table for " + n + "\n\n";
+
+    for (let i = 1; i <= 10; i++) {
+        table += n + " x " + i + " = " + (n * i) + "\n";
+    }
+
+    document.getElementById("tableResult").innerText = table;
+}
+</script>
+
+</body>
+</html>

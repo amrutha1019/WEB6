@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Pop-up Demo</title>
+</head>
+<body>
+
+<button onclick="displayDate()">Display Date</button>
+<input type="text" id="dateBox" readonly>
+<button onclick="calculateFactorial()">Calculate Factorial</button>
+
+<script>
+function displayDate() {
+    document.getElementById("dateBox").value =
+        new Date().toLocaleDateString();
+}
+
+function calculateFactorial() {
+    let n = parseInt(prompt("Enter a number to calculate its factorial:"));
+    if (isNaN(n) || n < 0) {
+        alert("Please enter a valid non-negative number.");
+        return;
+    }
+    let fact = 1;
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    alert("The factorial of " + n + " is " + fact + ".");
+}
+</script>
+
+</body>
+</html>
+
